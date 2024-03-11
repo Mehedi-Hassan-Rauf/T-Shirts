@@ -35,7 +35,7 @@ const Success = () => {
     if (items.length > 0) {
       final();
     }
-  }, []);
+  });
   return (
     <div className="w-full flex flex-col justify-center items-center gap-10">
       <h1 className="text-4xl font-semibold">

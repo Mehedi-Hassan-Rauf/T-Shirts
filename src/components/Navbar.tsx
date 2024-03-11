@@ -68,7 +68,7 @@ const Navbar = () => {
                 <AiOutlineUser />
               )
             ) : (
-              <Link onClick={() => setOpenUserMenu(false)} href={"/sign-in"}>
+              <Link href={"/sign-in"}>
                 <button className="bg-slate-700 text-base text-white px-3 py-1">
                   Log In
                 </button>
@@ -81,15 +81,9 @@ const Navbar = () => {
         </div>
 
         {/* USER MENU */}
-        {openUserMenu && (
+        {openUserMenu && user && (
           <div className="z-10 absolute right-10 top-[40px] w-28 bg-gray-700 shadow-md rounded-md p-4 text-white max-md:hidden text-center">
-            {!user ? (
-              <ul>
-                <Link onClick={() => setOpenUserMenu(false)} href={"/sign-in"}>
-                  <li>Log In</li>
-                </Link>
-              </ul>
-            ) : (
+            {
               <ul>
                 {userLinks.map((link, index) => (
                   <Link
@@ -112,7 +106,7 @@ const Navbar = () => {
                   Sign Out
                 </li>
               </ul>
-            )}
+            }
           </div>
         )}
       </div>
